@@ -1,0 +1,143 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--s5);
+  margin-bottom: var(--s8);
+}
+
+.stat-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s5) var(--s6);
+}
+
+.stat-card-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stat-card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-top: var(--s1);
+  line-height: 1.2;
+}
+
+.stat-card-sub {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: var(--s1);
+}
+
+.stat-card-accent {
+  border-top: 2px solid var(--accent);
+}
+
+.table-wrapper {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table thead {
+  background: var(--bg-subtle);
+}
+
+.table th {
+  padding: var(--s3) var(--s5);
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: var(--s4) var(--s5);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.018);
+  color: var(--text-primary);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem var(--s3);
+  border-radius: var(--r-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.badge-accent {
+  background: var(--accent-muted);
+  color: var(--accent);
+  border: 1px solid rgba(201, 169, 110, 0.22);
+}
+.badge-success {
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--success);
+}
+.badge-warning {
+  background: rgba(251, 146, 60, 0.12);
+  color: var(--warning);
+}
+.badge-danger {
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--danger);
+}
+.badge-neutral {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+}
+
+.progress {
+  height: 0.4rem;
+  background: var(--bg-elevated);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--r-full);
+  transition: width 0.4s ease;
+}
+
+.progress-bar--success {
+  background: var(--success);
+}
+.progress-bar--danger {
+  background: var(--danger);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: var(--s6) 0;
+}

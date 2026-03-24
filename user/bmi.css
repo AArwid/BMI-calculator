@@ -1,0 +1,116 @@
+.bmi-calc-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: var(--s6);
+  align-items: start;
+  margin-bottom: var(--s6);
+}
+
+.bmi-value {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.05em;
+}
+
+.bmi-category-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--s2) var(--s4);
+  border-radius: var(--r-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: rgba(74, 222, 128, 0.14);
+  color: var(--success);
+  margin-top: var(--s3);
+}
+
+.bmi-scale {
+  margin: var(--s5) 0 var(--s3);
+}
+
+.bmi-scale-bar {
+  position: relative;
+  height: 0.625rem;
+  border-radius: var(--r-full);
+  overflow: hidden;
+  display: flex;
+}
+
+.bmi-segment {
+  height: 100%;
+}
+
+.bmi-seg-under {
+  background: #60a5fa;
+  flex: 3.5;
+}
+
+.bmi-seg-normal {
+  background: var(--success);
+  flex: 6.4;
+}
+
+.bmi-seg-over {
+  background: var(--warning);
+  flex: 5;
+}
+
+.bmi-seg-obese {
+  background: var(--danger);
+  flex: 5;
+}
+
+.bmi-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: var(--s2);
+}
+
+.bmi-marker-row {
+  position: relative;
+  height: 1.25rem;
+  margin-top: var(--s1);
+}
+
+.bmi-marker {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+}
+
+.bmi-marker::before {
+  content: "▲";
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+.bmi-key-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s3);
+  margin-top: var(--s5);
+}
+
+.bmi-key-item {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  font-size: 0.875rem;
+}
+
+.bmi-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .bmi-calc-grid {
+    grid-template-columns: 1fr;
+  }
+}
