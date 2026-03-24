@@ -12,14 +12,15 @@
     />
     <link rel="stylesheet" href="../assets/styles.css" />
     <link rel="stylesheet" href="./bmi.css" />
+    <script type="module" src="../dist/user/bmi.js" defer></script>
   </head>
   <body>
  
 
       <main class="main-content">
-        <div class="topbar">
+        <div class="topbar" style="margin-bottom: var(--s6)">
           <div>
-            <h1 class="topbar-title">BMI Calculator</h1>
+            <a href="../index.html"><h1 class="topbar-title">BMI Calculator</h1></a>
             <p
               style="
                 font-size: 0.875rem;
@@ -89,7 +90,7 @@
                 />
               </div>
 
-              <div style="display: flex; gap: var(--s3)">
+              <div style="display: flex; flex-wrap: wrap; gap: var(--s3)">
                 <button
                   type="submit"
                   class="btn btn-primary"
@@ -168,8 +169,7 @@
             </div>
           </div>
 
-          <div>
-            <div class="card card-accent" id="bmiResultCard">
+            <div class="card card-accent" id="bmiResultCard" style="display: none">
               <p
                 style="
                   font-size: 0.72rem;
@@ -181,10 +181,8 @@
               >
                 Your BMI
               </p>
-              <div class="bmi-value" id="bmiValue">23.4</div>
-              <div class="bmi-category-badge" id="bmiCategory">
-                Normal weight
-              </div>
+              <div class="bmi-value" id="bmiValue">—</div>
+              <div class="bmi-category-badge" id="bmiCategory">—</div>
 
               <div class="bmi-scale">
                 <div class="bmi-scale-bar">
@@ -193,13 +191,8 @@
                   <div class="bmi-segment bmi-seg-over"></div>
                   <div class="bmi-segment bmi-seg-obese"></div>
                 </div>
-
                 <div class="bmi-marker-row">
-                  <div
-                    class="bmi-marker"
-                    id="bmiMarker"
-                    style="left: 44.7%"
-                  ></div>
+                  <div class="bmi-marker" id="bmiMarker" style="left: 50%"></div>
                 </div>
                 <div class="bmi-scale-labels">
                   <span>10</span>
@@ -225,7 +218,7 @@
                     style="font-weight: 600; margin-top: var(--s1)"
                     id="bmiHeightDisplay"
                   >
-                    178 cm
+                    — cm
                   </div>
                 </div>
                 <div>
@@ -234,22 +227,17 @@
                     style="font-weight: 600; margin-top: var(--s1)"
                     id="bmiWeightDisplay"
                   >
-                    74.0 kg
+                    — kg
                   </div>
                 </div>
               </div>
 
               <div style="display: flex; gap: var(--s3); margin-top: var(--s5)">
                 <button class="btn btn-primary btn-sm" id="saveBmiBtn">
-                  <span class="btn-text">Save Result</span>
-                  <span class="btn-spinner" aria-hidden="true"
-                    ><span class="spinner spinner--sm"></span
-                  ></span>
+                  Save Result
                 </button>
-                <button class="btn btn-ghost btn-sm">Share</button>
               </div>
             </div>
-          </div>
         </div>
 
         <div class="card">
@@ -273,33 +261,10 @@
                   <th>Category</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Mar 22, 2026</td>
-                  <td>178</td>
-                  <td>74.0</td>
-                  <td><strong style="color: var(--accent)">23.4</strong></td>
-                  <td><span class="badge badge-success">Normal</span></td>
-                </tr>
-                <tr>
-                  <td>Feb 15, 2026</td>
-                  <td>178</td>
-                  <td>76.2</td>
-                  <td><strong style="color: var(--accent)">24.0</strong></td>
-                  <td><span class="badge badge-success">Normal</span></td>
-                </tr>
-                <tr>
-                  <td>Jan 08, 2026</td>
-                  <td>178</td>
-                  <td>78.5</td>
-                  <td><strong style="color: var(--warning)">24.8</strong></td>
-                  <td><span class="badge badge-success">Normal</span></td>
-                </tr>
-              </tbody>
+              <tbody></tbody>
             </table>
           </div>
         </div>
       </main>
-    </div>
   </body>
 </html>

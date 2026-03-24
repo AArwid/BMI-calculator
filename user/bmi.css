@@ -1,9 +1,17 @@
+.main-content {
+  padding: var(--s4);
+}
+
 .bmi-calc-grid {
   display: grid;
-  grid-template-columns: 380px 1fr;
+  grid-template-columns: 1fr;
   gap: var(--s6);
   align-items: start;
   margin-bottom: var(--s6);
+}
+
+.bmi-calc-grid > * {
+  min-width: 0;
 }
 
 .bmi-value {
@@ -109,8 +117,12 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 900px) {
+.table-wrapper {
+  overflow-x: auto;
+}
+
+@media (min-width: 900px) {
   .bmi-calc-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 380px 1fr;
   }
 }
