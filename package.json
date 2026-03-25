@@ -1,0 +1,14 @@
+{
+  "name": "bmi-calculator",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "vitest",
+    "test-ui": "vitest --ui",
+    "build": "tsc --watch"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^4.0.18",
+    "happy-dom": "^20.6.3",
+    "vitest": "^4.0.18"
+  }
+}
