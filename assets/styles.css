@@ -9,12 +9,26 @@
 @import "./css/components.css";
 @import "./css/utilities.css";
 
+.logo-header {
+  display: none;
+  @media (max-width: 500px) {
+    display: inline;
+    color: var(--accent);
+    font-weight: 600;
+    padding-right: 1rem;
+  }
+}
 .nav-link {
   border-right: 2px solid var(--bg-elevated);
   padding-right: 1rem;
 }
 .nav-link:last-child {
   border-right: 0;
+}
+
+header nav ul {
+  justify-content: center;
+  align-items: center;
 }
 
 #main-index-page {

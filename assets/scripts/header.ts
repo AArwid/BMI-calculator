@@ -30,12 +30,16 @@ const headerItems = [
 
 export const renderHeader = () => {
   const pathName = window.location.pathname;
-  console.log(pathName);
-
   let cookie = localStorage.getItem("user");
-  const header = createElement("header", "w-full flex items-center mb-2", null);
-  const nav = createElement("nav", null, null);
-  const ul = createElement("ul", "flex flex-row gap-4", null);
+
+  const headerEl = createElement(
+    "header",
+    "w-full flex items-center mb-2",
+    null,
+  );
+  const navEl = createElement("nav", null, null);
+  const logo = createElement("p", "logo-header", "FitTrack");
+  const ulEl = createElement("ul", "flex flex-row gap-4", null);
 
   const filtered = cookie
     ? headerItems.filter((h) => h.title === "Logout")
@@ -43,13 +47,30 @@ export const renderHeader = () => {
 
   filtered.forEach((h) => {
     if (h.href === pathName) return;
+
     const listItem = createElement("li", "nav-link", null);
-    const link = createElement("a", null, h.title) as HTMLAnchorElement;
-    link.href = h.href;
-    listItem.append(link);
-    ul.append(listItem);
+
+    if (h.title === "Logout") {
+      const logoutBtn = createElement(
+        "button",
+        "btn btn-secondary",
+        h.title,
+      ) as HTMLButtonElement;
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        window.location.href = "/index.html";
+      });
+      listItem.append(logoutBtn);
+    } else {
+      const link = createElement("a", null, h.title) as HTMLAnchorElement;
+      link.href = h.href;
+      listItem.append(link);
+    }
+
+    ulEl.append(logo, listItem);
   });
-  nav.append(ul);
-  header.append(nav);
-  document.body.append(header);
+
+  navEl.append(ulEl);
+  headerEl.append(navEl);
+  document.body.append(headerEl);
 };
