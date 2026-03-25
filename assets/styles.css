@@ -1,10 +1,43 @@
 @import "./css/tokens.css";
-@import "./css/spinner.css";
+/* @import "./css/spinner.css"; */
 @import "./css/typography.css";
 @import "./css/buttons.css";
 @import "./css/forms.css";
 @import "./css/cards.css";
-@import "./css/auth.css";
-@import "./css/layout.css";
+/* @import "./css/auth.css"; */
+/* @import "./css/layout.css"; */
 @import "./css/components.css";
 @import "./css/utilities.css";
+
+.nav-link {
+  border-right: 2px solid var(--bg-elevated);
+  padding-right: 1rem;
+}
+.nav-link:last-child {
+  border-right: 0;
+}
+
+#main-index-page {
+  background-color: var(--bg-elevated);
+  padding: 4rem;
+  border-radius: 5px;
+  margin: 1rem;
+
+  @media (max-width: 500px) {
+    padding: 1rem;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-base);
+}
+
+.a-override:hover {
+  color: var(--text-inverse) !important;
+}

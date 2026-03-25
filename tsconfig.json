@@ -10,7 +10,8 @@
   },
   "include": [
     "models",
-    "user"
+    "user",
+    "assets/scripts"
   ],
   "exclude": [
     "node_modules"
