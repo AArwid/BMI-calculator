@@ -40,6 +40,7 @@ export const renderHeader = () => {
   const navEl = createElement("nav", null, null);
   const logo = createElement("p", "logo-header", "FitTrack");
   const ulEl = createElement("ul", "flex flex-row gap-4", null);
+  if (cookie) ulEl.append(logo);
 
   const filtered = cookie
     ? headerItems.filter((h) => h.title === "Logout")
@@ -67,7 +68,7 @@ export const renderHeader = () => {
       listItem.append(link);
     }
 
-    ulEl.append(logo, listItem);
+    ulEl.append(listItem);
   });
 
   navEl.append(ulEl);
