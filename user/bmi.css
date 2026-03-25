@@ -1,3 +1,7 @@
+.main-content {
+  padding: var(--s8);
+}
+
 .bmi-calc-grid {
   display: grid;
   grid-template-columns: 380px 1fr;
