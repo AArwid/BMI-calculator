@@ -30,7 +30,7 @@ const headerItems = [
 
 export const renderHeader = () => {
   const pathName = window.location.pathname;
-  let cookie = localStorage.getItem("user");
+  const cookie = localStorage.getItem("user");
 
   const headerEl = createElement(
     "header",

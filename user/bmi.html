@@ -1,284 +1,232 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BMI Calculator — FitTrack</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../assets/styles.css" />
-    <link rel="stylesheet" href="./bmi.css" />
-    <script type="module" src="../dist/assets/scripts/renderHeader.js"></script>
-    <script type="module" src="../dist/user/bmi.js" defer></script>
-  </head>
-  <body>
- 
 
-      <main class="main-content">
-        <div class="topbar" style="margin-bottom: var(--s6)">
-          <div>
-            <a href="../index.html"><h1 class="topbar-title">BMI Calculator</h1></a>
-            <p
-              style="
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator — FitTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="./bmi.css" />
+  <script type="module" src="../dist/assets/scripts/renderHeader.js"></script>
+  <script type="module" src="../dist/user/bmi.js" defer></script>
+</head>
+
+<body>
+
+
+  <main class="main-content">
+    <div class="topbar" style="margin-bottom: var(--s6)">
+      <div>
+        <a href="../index.html">
+          <h1 class="topbar-title">BMI Calculator</h1>
+        </a>
+        <p style="
                 font-size: 0.875rem;
                 color: var(--text-muted);
                 margin-top: var(--s1);
-              "
-            >
-              Calculate your Body Mass Index from height and weight.
-            </p>
-          </div>
+              ">
+          Calculate your Body Mass Index from height and weight.
+        </p>
+      </div>
+    </div>
+
+    <div class="bmi-calc-grid">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Enter Measurements</div>
         </div>
 
-        <div class="bmi-calc-grid">
-          <div class="card">
-            <div class="card-header">
-              <div class="card-title">Enter Measurements</div>
-            </div>
-
-            <form id="bmiForm" class="form-stack" novalidate>
-              <div class="form-group">
-                <label for="bmiHeight" class="form-label">
-                  Height
-                  <span
-                    style="
+        <form id="bmiForm" class="form-stack" novalidate>
+          <div class="form-group">
+            <label for="bmiHeight" class="form-label">
+              Height
+              <span style="
                       font-size: 0.8125rem;
                       color: var(--text-muted);
                       font-weight: 400;
-                    "
-                    >cm</span
-                  >
-                </label>
-                <input
-                  type="number"
-                  id="bmiHeight"
-                  name="height"
-                  class="form-input"
-                  value=""
-                  min="50"
-                  max="300"
-                  placeholder=""
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="bmiWeight" class="form-label">
-                  Weight
-                  <span
-                    style="
+                    ">cm</span>
+            </label>
+            <input type="number" id="bmiHeight" name="height" class="form-input" value="" min="50" max="300"
+              placeholder="" required />
+          </div>
+          <div class="form-group">
+            <label for="bmiWeight" class="form-label">
+              Weight
+              <span style="
                       font-size: 0.8125rem;
                       color: var(--text-muted);
                       font-weight: 400;
-                    "
-                    >kg</span
-                  >
-                </label>
-                <input
-                  type="number"
-                  id="bmiWeight"
-                  name="weight"
-                  class="form-input"
-                  value=""
-                  min="20"
-                  max="500"
-                  step="0.1"
-                  placeholder=""
-                  required
-                />
-              </div>
+                    ">kg</span>
+            </label>
+            <input type="number" id="bmiWeight" name="weight" class="form-input" value="" min="20" max="500" step="0.1"
+              placeholder="" required />
+          </div>
 
-              <div style="display: flex; flex-wrap: wrap; gap: var(--s3)">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  style="flex: 1"
-                  id="calcBmiBtn"
-                >
-                  <span class="btn-text">Calculate BMI</span>
-                  <span class="btn-spinner" aria-hidden="true"
-                    ><span class="spinner spinner--sm"></span
-                  ></span>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-ghost btn-sm"
-                  title="Load from profile"
-                  id="useProfileBtn"
-                >
-                  Use profile data
-                </button>
-              </div>
-            </form>
+          <div style="display: flex; flex-wrap: wrap; gap: var(--s3)">
+            <button type="submit" class="btn btn-primary" style="flex: 1" id="calcBmiBtn">
+              <span class="btn-text">Calculate BMI</span>
+              <span class="btn-spinner" aria-hidden="true"><span class="spinner spinner--sm"></span></span>
+            </button>
+            <button type="button" class="btn btn-ghost btn-sm" title="Load from profile" id="useProfileBtn">
+              Use profile data
+            </button>
+          </div>
+        </form>
 
-            <div class="divider"></div>
-            <p
-              style="
+        <div class="divider"></div>
+        <p style="
                 font-size: 0.8125rem;
                 font-weight: 600;
                 color: var(--text-secondary);
                 margin-bottom: var(--s3);
-              "
-            >
-              Categories
-            </p>
-            <div class="bmi-key-grid">
-              <div class="bmi-key-item">
-                <div class="bmi-dot" style="background: #60a5fa"></div>
-                <div>
-                  <div style="font-weight: 500; font-size: 0.875rem">
-                    Underweight
-                  </div>
-                  <div style="color: var(--text-muted); font-size: 0.8125rem">
-                    &lt; 18.5
-                  </div>
-                </div>
+              ">
+          Categories
+        </p>
+        <div class="bmi-key-grid">
+          <div class="bmi-key-item">
+            <div class="bmi-dot" style="background: #60a5fa"></div>
+            <div>
+              <div style="font-weight: 500; font-size: 0.875rem">
+                Underweight
               </div>
-              <div class="bmi-key-item">
-                <div class="bmi-dot" style="background: var(--success)"></div>
-                <div>
-                  <div style="font-weight: 500; font-size: 0.875rem">
-                    Normal
-                  </div>
-                  <div style="color: var(--text-muted); font-size: 0.8125rem">
-                    18.5 – 24.9
-                  </div>
-                </div>
-              </div>
-              <div class="bmi-key-item">
-                <div class="bmi-dot" style="background: var(--warning)"></div>
-                <div>
-                  <div style="font-weight: 500; font-size: 0.875rem">
-                    Overweight
-                  </div>
-                  <div style="color: var(--text-muted); font-size: 0.8125rem">
-                    25.0 – 29.9
-                  </div>
-                </div>
-              </div>
-              <div class="bmi-key-item">
-                <div class="bmi-dot" style="background: var(--danger)"></div>
-                <div>
-                  <div style="font-weight: 500; font-size: 0.875rem">Obese</div>
-                  <div style="color: var(--text-muted); font-size: 0.8125rem">
-                    ≥ 30.0
-                  </div>
-                </div>
+              <div style="color: var(--text-muted); font-size: 0.8125rem">
+                &lt; 18.5
               </div>
             </div>
           </div>
+          <div class="bmi-key-item">
+            <div class="bmi-dot" style="background: var(--success)"></div>
+            <div>
+              <div style="font-weight: 500; font-size: 0.875rem">
+                Normal
+              </div>
+              <div style="color: var(--text-muted); font-size: 0.8125rem">
+                18.5 – 24.9
+              </div>
+            </div>
+          </div>
+          <div class="bmi-key-item">
+            <div class="bmi-dot" style="background: var(--warning)"></div>
+            <div>
+              <div style="font-weight: 500; font-size: 0.875rem">
+                Overweight
+              </div>
+              <div style="color: var(--text-muted); font-size: 0.8125rem">
+                25.0 – 29.9
+              </div>
+            </div>
+          </div>
+          <div class="bmi-key-item">
+            <div class="bmi-dot" style="background: var(--danger)"></div>
+            <div>
+              <div style="font-weight: 500; font-size: 0.875rem">Obese</div>
+              <div style="color: var(--text-muted); font-size: 0.8125rem">
+                ≥ 30.0
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          <div>
-            <div class="card" id="bmiResultCard">
-              <p
-                style="
+      <div>
+        <div class="card" id="bmiResultCard">
+          <p style="
                   font-size: 0.72rem;
                   font-weight: 600;
                   letter-spacing: 0.08em;
                   text-transform: uppercase;
                   color: var(--text-muted);
-                "
-              >
-                Your BMI
-              </p>
-              <div class="bmi-value" id="bmiValue">—</div>
-              <div class="bmi-category-badge" id="bmiCategory">—</div>
+                ">
+            Your BMI
+          </p>
+          <div class="bmi-value" id="bmiValue">—</div>
+          <div class="bmi-category-badge" id="bmiCategory">—</div>
 
-              <div class="bmi-scale">
-                <div class="bmi-scale-bar">
-                  <div class="bmi-segment bmi-seg-under"></div>
-                  <div class="bmi-segment bmi-seg-normal"></div>
-                  <div class="bmi-segment bmi-seg-over"></div>
-                  <div class="bmi-segment bmi-seg-obese"></div>
-                </div>
-                <div class="bmi-marker-row">
-                  <div class="bmi-marker" id="bmiMarker" style="left: 50%"></div>
-                </div>
-                <div class="bmi-scale-labels">
-                  <span>10</span>
-                  <span>18.5</span>
-                  <span>25</span>
-                  <span>30</span>
-                  <span>40+</span>
-                </div>
-              </div>
+          <div class="bmi-scale">
+            <div class="bmi-scale-bar">
+              <div class="bmi-segment bmi-seg-under"></div>
+              <div class="bmi-segment bmi-seg-normal"></div>
+              <div class="bmi-segment bmi-seg-over"></div>
+              <div class="bmi-segment bmi-seg-obese"></div>
+            </div>
+            <div class="bmi-marker-row">
+              <div class="bmi-marker" id="bmiMarker" style="left: 50%"></div>
+            </div>
+            <div class="bmi-scale-labels">
+              <span>10</span>
+              <span>18.5</span>
+              <span>25</span>
+              <span>30</span>
+              <span>40+</span>
+            </div>
+          </div>
 
-              <div class="bmi-tip">
-                <div class="bmi-tip-title">Healthy Range</div>
-                <p>
-                  A BMI between <strong>18.5</strong> and
-                  <strong>24.9</strong> indicates a healthy weight. Staying
-                  within this range through balanced nutrition and regular
-                  activity supports long-term well-being.
-                </p>
-              </div>
+          <div class="bmi-tip">
+            <div class="bmi-tip-title">Healthy Range</div>
+            <p>
+              A BMI between <strong>18.5</strong> and
+              <strong>24.9</strong> indicates a healthy weight. Staying
+              within this range through balanced nutrition and regular
+              activity supports long-term well-being.
+            </p>
+          </div>
 
-              <div class="divider"></div>
-              <div
-                style="
+          <div class="divider"></div>
+          <div style="
                   display: grid;
                   grid-template-columns: 1fr 1fr;
                   gap: var(--s4);
                   font-size: 0.875rem;
-                "
-              >
-                <div>
-                  <div style="color: var(--text-muted)">Height</div>
-                  <div
-                    style="font-weight: 600; margin-top: var(--s1)"
-                    id="bmiHeightDisplay"
-                  >
-                    — cm
-                  </div>
-                </div>
-                <div>
-                  <div style="color: var(--text-muted)">Weight</div>
-                  <div
-                    style="font-weight: 600; margin-top: var(--s1)"
-                    id="bmiWeightDisplay"
-                  >
-                    — kg
-                  </div>
-                </div>
-              </div>
-
-              <div style="display: flex; gap: var(--s3); margin-top: var(--s5)">
-                <button class="btn btn-primary btn-sm" id="saveBmiBtn">
-                  Save Result
-                </button>
+                ">
+            <div>
+              <div style="color: var(--text-muted)">Height</div>
+              <div style="font-weight: 600; margin-top: var(--s1)" id="bmiHeightDisplay">
+                — cm
               </div>
             </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
             <div>
-              <div class="card-title">BMI History</div>
-              <div class="card-subtitle">Your past measurements</div>
+              <div style="color: var(--text-muted)">Weight</div>
+              <div style="font-weight: 600; margin-top: var(--s1)" id="bmiWeightDisplay">
+                — kg
+              </div>
             </div>
           </div>
-          <div
-            class="table-wrapper"
-            style="border: none; background: transparent; box-shadow: none"
-          >
-            <table class="table" id="bmiHistoryTable">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Height (cm)</th>
-                  <th>Weight (kg)</th>
-                  <th>BMI</th>
-                  <th>Category</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
+
+          <div style="display: flex; gap: var(--s3); margin-top: var(--s5)">
+            <button class="btn btn-primary btn-sm" id="saveBmiBtn">
+              Save Result
+            </button>
           </div>
         </div>
       </div>
-      </main>
-  </body>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">BMI History</div>
+            <div class="card-subtitle">Your past measurements</div>
+          </div>
+        </div>
+        <div class="table-wrapper" style="border: none; background: transparent; box-shadow: none">
+          <table class="table" id="bmiHistoryTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Height (cm)</th>
+                <th>Weight (kg)</th>
+                <th>BMI</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>
