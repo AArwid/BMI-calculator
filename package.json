@@ -4,11 +4,16 @@
   "scripts": {
     "test": "vitest",
     "test-ui": "vitest --ui",
+    "test:jest": "jest",
     "build": "tsc --watch"
   },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@vitest/ui": "^4.0.18",
     "happy-dom": "^20.6.3",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "ts-jest": "^29.4.6",
     "vitest": "^4.0.18"
   }
 }
