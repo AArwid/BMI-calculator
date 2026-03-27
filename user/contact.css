@@ -69,3 +69,37 @@ button {
 button:hover {
     background-color: #f0f0f0;
 }
+
+@media (max-width: 1024px) {
+    .container {
+        width: 70%;
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+        height: auto;
+    }
+
+    .container {
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    input, textarea {
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
