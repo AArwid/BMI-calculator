@@ -87,14 +87,6 @@ export const renderHeader = () => {
     ulEl.append(listItem);
   });
 
-  if (onContactPage && !cookie) {
-    const listItem = createElement("li", "nav-link", null);
-    const link = createElement("a", null, "BMI") as HTMLAnchorElement;
-    link.href = "/user/bmi.html";
-    listItem.append(link);
-    ulEl.append(listItem);
-  }
-
   navEl.append(ulEl);
   headerEl.append(navEl);
   document.body.append(headerEl);
