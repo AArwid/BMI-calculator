@@ -53,8 +53,16 @@ if (loginForm) {
             if (sessionStorage.getItem('bmiRedirect') === 'true') {
                 sessionStorage.removeItem('bmiRedirect');
                 sessionStorage.setItem('bmiLoggedIn', 'true');
+                window.location.href = 'bmi.html';
+            } else {
+                const returnTo = sessionStorage.getItem('postLoginRedirect');
+                if (returnTo) {
+                    sessionStorage.removeItem('postLoginRedirect');
+                    window.location.href = returnTo;
+                } else {
+                    window.location.href = 'bmi.html';
+                }
             }
-            window.location.href = 'bmi.html';
         } else {
             alert("Invalid email or password.");
         }

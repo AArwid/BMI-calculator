@@ -58,6 +58,7 @@ const loadProfileData = () => {
 };
 
 const initApp = () => {
+  sessionStorage.removeItem("postLoginRedirect");
   displayHistory(getHistory());
 
   if (sessionStorage.getItem("bmiLoggedIn") === "true") {

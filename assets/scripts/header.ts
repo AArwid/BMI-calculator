@@ -15,6 +15,10 @@ const headerItems = [
     href: "/index.html",
   },
   {
+    title: "Contact",
+    href: "/user/contact.html",
+  },
+  {
     title: "Sign Up",
     href: "/user/register.html",
   },
@@ -42,8 +46,12 @@ export const renderHeader = () => {
   const ulEl = createElement("ul", "flex flex-row gap-4", null);
   if (cookie) ulEl.append(logo);
 
+  const onContactPage = pathName.endsWith("/contact.html");
+
   const filtered = cookie
-    ? headerItems.filter((h) => h.title === "Logout")
+    ? headerItems.filter(
+        (h) => h.title === "Logout" || h.title === "Contact",
+      )
     : headerItems.filter((h) => h.title !== "Logout");
 
   filtered.forEach((h) => {
@@ -52,6 +60,13 @@ export const renderHeader = () => {
     const listItem = createElement("li", "nav-link", null);
 
     if (h.title === "Logout") {
+      if (onContactPage) {
+        const bmiLi = createElement("li", "nav-link", null);
+        const bmiLink = createElement("a", null, "BMI") as HTMLAnchorElement;
+        bmiLink.href = "/user/bmi.html";
+        bmiLi.append(bmiLink);
+        ulEl.append(bmiLi);
+      }
       const logoutBtn = createElement(
         "button",
         "btn btn-secondary",
@@ -71,6 +86,14 @@ export const renderHeader = () => {
 
     ulEl.append(listItem);
   });
+
+  if (onContactPage && !cookie) {
+    const listItem = createElement("li", "nav-link", null);
+    const link = createElement("a", null, "BMI") as HTMLAnchorElement;
+    link.href = "/user/bmi.html";
+    listItem.append(link);
+    ulEl.append(listItem);
+  }
 
   navEl.append(ulEl);
   headerEl.append(navEl);
