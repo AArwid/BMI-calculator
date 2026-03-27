@@ -1,5 +1,4 @@
-import { calculateBmi } from "../user/bmi-utils.js";
-import { getBmiCategory } from "../user/bmi.js";
+import { calculateBmi, getBmiCategory } from "../user/bmi-utils.js";
 
 describe("calculateBmi", () => {
   test("returns correct BMI for normal weight (170 cm, 70 kg)", () => {
