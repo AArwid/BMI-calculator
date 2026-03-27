@@ -69,6 +69,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
+  position: relative;
 }
 
 a {
@@ -90,4 +91,21 @@ svg {
 ul,
 ol {
   list-style: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem 1rem 1rem 0;
+  z-index: 9999;
+  justify-content: end;
+  @media (max-width: 500px) {
+    top: auto;
+    bottom: 0;
+    background-color: var(--bg-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

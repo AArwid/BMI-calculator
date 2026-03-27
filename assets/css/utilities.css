@@ -16,6 +16,15 @@
 .justify-center {
   justify-content: center;
 }
+.justify-end {
+  justify-content: end;
+}
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+}
 .gap-2 {
   gap: var(--s2);
 }
