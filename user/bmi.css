@@ -117,6 +117,30 @@
   flex-shrink: 0;
 }
 
+.bmi-tip {
+  background: var(--bg-subtle);
+  border-radius: var(--r-md);
+  padding: var(--s4);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-top: var(--s4);
+}
+
+.bmi-tip-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: var(--s2);
+}
+
+.bmi-tip strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
 .table-wrapper {
   overflow-x: auto;
 }
@@ -124,5 +148,17 @@
 @media (min-width: 900px) {
   .bmi-calc-grid {
     grid-template-columns: 380px 1fr;
+    align-items: stretch;
+  }
+  .bmi-calc-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+  #bmiResultCard {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .bmi-tip {
+    margin-top: auto;
   }
 }

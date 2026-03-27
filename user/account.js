@@ -9,10 +9,10 @@ if (registerForm) {
         const password = document.getElementById('regPassword').value;
 
         const newUser = {
-            id: crypto.randomUUID(), 
+            id: crypto.randomUUID(),
             username: username,
             email: email,
-            passwordHash: btoa(password), 
+            passwordHash: btoa(password),
             role: "user",
             createdAt: new Date().toISOString(),
             updatedAt: new Date().toISOString()
@@ -42,13 +42,18 @@ if (loginForm) {
         const password = document.querySelector('input[type="password"]').value;
 
         const users = JSON.parse(localStorage.getItem('users') || '[]');
-        
+
         const user = users.find(u => u.email === email && atob(u.passwordHash) === password);
 
         if (user) {
             alert(`Welcome back, ${user.username}!`);
             localStorage.setItem('currentUser', JSON.stringify(user));
-            
+
+            if (sessionStorage.getItem('bmiRedirect') === 'true') {
+                sessionStorage.removeItem('bmiRedirect');
+                sessionStorage.setItem('bmiLoggedIn', 'true');
+                window.location.href = 'bmi.html';
+            }
         } else {
             alert("Invalid email or password.");
         }
