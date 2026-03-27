@@ -4,6 +4,7 @@ document.body.innerHTML = `
     <input id="bmiHeight" type="number" />
     <input id="bmiWeight" type="number" />
     <button id="saveBmiBtn" type="button">Save</button>
+    <button id="useProfileBtn" type="button">Use Profile</button>
   </form>
   <div id="bmiResultCard" style="display:none"></div>
   <div id="bmiValue"></div>

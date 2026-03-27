@@ -1,11 +1,18 @@
-import { calculateBmi, getBmiCategory, getHistory, saveToHistory, createBmiEntry } from './bmi-utils.js';
-import { displayResult, displayHistory } from './bmi-dom.js';
+import {
+  calculateBmi,
+  getBmiCategory,
+  getHistory,
+  saveToHistory,
+  createBmiEntry,
+} from "./bmi-utils.js";
+import { displayResult, displayHistory } from "./bmi-dom.js";
 
-const form = document.querySelector<HTMLFormElement>('#bmiForm')!;
-const heightInput = document.querySelector<HTMLInputElement>('#bmiHeight')!;
-const weightInput = document.querySelector<HTMLInputElement>('#bmiWeight')!;
-const saveBtn = document.querySelector<HTMLButtonElement>('#saveBmiBtn')!;
-const useProfileBtn = document.querySelector<HTMLButtonElement>('#useProfileBtn')!;
+const form = document.querySelector<HTMLFormElement>("#bmiForm")!;
+const heightInput = document.querySelector<HTMLInputElement>("#bmiHeight")!;
+const weightInput = document.querySelector<HTMLInputElement>("#bmiWeight")!;
+const saveBtn = document.querySelector<HTMLButtonElement>("#saveBmiBtn")!;
+const useProfileBtn =
+  document.querySelector<HTMLButtonElement>("#useProfileBtn")!;
 
 const handleSubmit = (e: SubmitEvent) => {
   e.preventDefault();
@@ -29,19 +36,19 @@ const saveResult = () => {
 };
 
 const loadProfileData = () => {
-  const currentUser = localStorage.getItem('currentUser');
+  const currentUser = localStorage.getItem("currentUser");
 
   if (!currentUser) {
-    alert('You need to log in to use profile data. Redirecting to login...');
-    sessionStorage.setItem('bmiRedirect', 'true');
-    window.location.href = 'account.html';
+    alert("You need to log in to use profile data. Redirecting to login...");
+    sessionStorage.setItem("bmiRedirect", "true");
+    window.location.href = "account.html";
     return;
   }
 
   const history = getHistory();
 
   if (history.length === 0) {
-    alert('No previous measurements found. Calculate and save a result first.');
+    alert("No previous measurements found. Calculate and save a result first.");
     return;
   }
 
@@ -53,13 +60,15 @@ const loadProfileData = () => {
 const initApp = () => {
   displayHistory(getHistory());
 
-  if (sessionStorage.getItem('bmiLoggedIn') === 'true') {
-    sessionStorage.removeItem('bmiLoggedIn');
+  if (sessionStorage.getItem("bmiLoggedIn") === "true") {
+    sessionStorage.removeItem("bmiLoggedIn");
     loadProfileData();
   }
 };
 
-document.addEventListener('DOMContentLoaded', initApp);
-form.addEventListener('submit', handleSubmit);
-saveBtn.addEventListener('click', saveResult);
-useProfileBtn.addEventListener('click', loadProfileData);
+document.addEventListener("DOMContentLoaded", initApp);
+form.addEventListener("submit", handleSubmit);
+saveBtn.addEventListener("click", saveResult);
+useProfileBtn.addEventListener("click", loadProfileData);
+
+export { getBmiCategory };
