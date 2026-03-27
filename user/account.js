@@ -48,6 +48,7 @@ if (loginForm) {
         if (user) {
             alert(`Welcome back, ${user.username}!`);
             localStorage.setItem('currentUser', JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(user));
 
             if (sessionStorage.getItem('bmiRedirect') === 'true') {
                 sessionStorage.removeItem('bmiRedirect');

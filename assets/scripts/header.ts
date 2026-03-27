@@ -59,6 +59,7 @@ export const renderHeader = () => {
       ) as HTMLButtonElement;
       logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("user");
+        localStorage.removeItem("currentUser");
         window.location.href = "/index.html";
       });
       listItem.append(logoutBtn);
